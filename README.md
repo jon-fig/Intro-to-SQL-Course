@@ -9,4 +9,4 @@ In this first lesson I learned how to import this Python package to use Big Quer
 
 Objects > Projects > Datasets > Tables
 
-'ORDER BY' always comes after 'GROUP BY'. In 'GROUP BY', I always need to list the columns in 'SELECT' that aren't aggregations. I learned this after failing one of the query exercises a few times and then it clicked to me what I was doing wrong.
+'ORDER BY' always comes after 'GROUP BY'. In 'GROUP BY', I always need to list the columns in 'SELECT' that aren't aggregations. I learned this after failing one of the query exercises in the 'ORDER BY' lesson a few times, then it clicked to me what I was doing wrong.
