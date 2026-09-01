@@ -1,12 +1,50 @@
 # Intro to SQL & BigQuery Analytics
 
 # Summary
-I studied SQL for the first time back a few years ago, where I learned the core principles, did some tinkering with MySQL and started some projects that never saw the light of day, but doing this course now, remembering what I had learned, acquiring more knowledge and putting it all to the test with some "real world" queries made me appreciate SQL more. I was always someone who learns more through practice than theory, so I breezed through the first exercises in the notebook editor without really making sense of what I was doing, which made me actually pay attention to understand the structure of the queries. Like how when I make an aggregation I'm actually creating a column, so I have to reference this column by the name attributed with 'AS' in case I need it later in the query. I could cite many other examples of what I learned in this course, like how I finally understand the difference of 'HAVING' and 'WHERE', and how to use both properly, but I'll do that in the next section, for now I just want to say thank you to this amazing Kaggle course which made me truly understand better SQL and some basics of dealing with Big Query and data warehouses. [Link to the Kaggle Course](https://www.kaggle.com/learn/intro-to-sql/course)
+I first studied SQL a few years ago, learning the core principles, tinkering in MySQL, and starting projects that never quite saw the light of day. Taking this course allowed me to reconnect with that foundation, build deeper technical knowledge, and test my skills against real-world datasets—which made me appreciate SQL so much more.
+
+I’ve always been someone who learns by doing rather than consuming pure theory. Hands-on practice in the notebook editor forced me to really look under the hood and make sense of query execution—like realizing how aggregations create calculated columns that need to be explicitly referenced, or mastering the exact logic behind HAVING vs. WHERE.
+
+This Kaggle course gave me a far stronger grasp of relational query logic and the basics of working with Google BigQuery data warehouses. [Link to the Kaggle Course](https://www.kaggle.com/learn/intro-to-sql/course)
 
 
+# Key Takeaways & Query Logic
+Since I already had a foundational understanding of core spreadsheet tools like Excel and basic database concepts (SELECT, FROM), this course focused heavily on leveling up my SQL syntax, cloud data architecture, and query optimization.
 
-In this first lesson I learned how to import this Python package to use Big Query. I learned the necessary steps of creating a reference and then do an API request. Most importantly, I learned the layers of where the data is stored. 
+Here are the key technical concepts and "lightbulb" moments I mastered through hands-on practice in the Kaggle notebook editor:
 
-Objects > Projects > Datasets > Tables
+# BigQuery Python SDK & Data Architecture:
 
-'ORDER BY' always comes after 'GROUP BY'. In 'GROUP BY', I always need to list the columns in 'SELECT' that aren't aggregations. I learned this after failing one of the query exercises in the 'ORDER BY' lesson a few times, then it clicked to me what I was doing wrong.
+Learned how Google BigQuery structures data hierarchically (Projects > Datasets > Tables).
+
+Mastered the Python API workflow: initializing a bigquery.Client() object, building dataset/table references, and using API calls to inspect schemas before running expensive queries.
+
+Learned how to preview rows using .to_dataframe() and how to configure query size limits/job configs to prevent accidental data quota overages.
+
+# Query Mechanics & Aggregations:
+
+Re-imprinted the simplicity of using COUNT(*) to count total rows instead of hunting down specific column names to reference.
+
+Understood how multi-line SQL strings are structured in Python using triple quotes (""").
+
+Filtering and Date Extraction (WHERE & EXTRACT):
+
+Practiced filtering temporal data on the fly by using EXTRACT directly within WHERE clauses.
+
+Learned how to chain multiple conditions together using AND inside WHERE statements.
+
+WHERE vs. HAVING Execution Order:
+
+WHERE filters individual raw rows before any grouping happens.
+
+HAVING filters aggregated data after the GROUP BY clause is executed and can only be used with aggregate columns.
+
+GROUP BY & ORDER BY Rules:
+
+Learned the hard way that any non-aggregated column in your SELECT statement must be explicitly listed in your GROUP BY.
+
+Remembered the strict clause order: GROUP BY must come before ORDER BY.
+
+Subqueries & CTEs (WITH):
+
+Mastered building cleaner, modular queries using Common Table Expressions (WITH ... AS (...)) to break complex logic into digestible steps, making sure to properly reference the CTE in the subsequent SELECT statement.
