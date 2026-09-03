@@ -33,18 +33,24 @@ Practiced filtering temporal data on the fly by using EXTRACT directly within WH
 
 Learned how to chain multiple conditions together using AND inside WHERE statements.
 
-WHERE vs. HAVING Execution Order:
+# WHERE vs. HAVING Execution Order:
 
 WHERE filters individual raw rows before any grouping happens.
 
 HAVING filters aggregated data after the GROUP BY clause is executed and can only be used with aggregate columns.
 
-GROUP BY & ORDER BY Rules:
+# GROUP BY & ORDER BY Rules:
 
 Learned the hard way that any non-aggregated column in your SELECT statement must be explicitly listed in your GROUP BY.
 
 Remembered the strict clause order: GROUP BY must come before ORDER BY.
 
-Subqueries & CTEs (WITH):
+# Subqueries & CTEs (WITH):
 
-Mastered building cleaner, modular queries using Common Table Expressions (WITH ... AS (...)) to break complex logic into digestible steps, making sure to properly reference the CTE in the subsequent SELECT statement.
+Mastered building cleaner, modular queries using Common Table Expressions (WITH ... AS (...)) to break complex logic into digestible steps, making sure to properly reference the CTE in the subsequent SELECT statement. 
+
+# Multi-Table Relational Logic (INNER JOIN):
+
+Understood how SQL builds combined in-memory tables via the ON bridging key (q.id = a.parent_id).
+
+Mastered explicit table aliasing (q. vs a.) to scope columns selectively—learning that join keys don't need to be exposed in the SELECT clause if they aren't required in the final output.
