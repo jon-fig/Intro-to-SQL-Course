@@ -1,6 +1,6 @@
 # Intro to SQL & BigQuery Analytics
 
-[_🇧🇷 Clique aqui para ler a versão em português 🇧🇷_](https://github.com/jon-fig/Intro-to-SQL-Course/blob/main/README_PT.md)
+[_🇧🇷 Clique aqui para ler a versão em Português 🇧🇷_](https://github.com/jon-fig/Intro-to-SQL-Course/blob/main/README_PT.md)
 # Summary
 I first studied SQL a few years ago, learning the core principles, tinkering in MySQL, and starting projects that never quite saw the light of day. Taking this course allowed me to reconnect with that foundation, build deeper technical knowledge, and test my skills against real-world datasets—which made me appreciate SQL so much more.
 
