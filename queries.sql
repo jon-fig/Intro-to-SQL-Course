@@ -13,33 +13,36 @@ configured with safety thresholds, and executed via Python.
 
 from google.cloud import bigquery
 
-# 1. Initialize BigQuery Client
+# Initialize BigQuery Client
 client = bigquery.Client()
 
-# 2. Define Query (Example: Aggregating Stack Overflow Answers)
-sql_query = """
-SELECT 
-    a.owner_user_id AS user_id, 
-    COUNT(1) AS number_of_answers
-FROM `bigquery-public-data.stackoverflow.posts_answers` AS a
-INNER JOIN `bigquery-public-data.stackoverflow.posts_questions` AS q
-    ON q.id = a.parent_id
-WHERE q.tags LIKE '%bigquery%'
-GROUP BY user_id
-ORDER BY number_of_answers DESC
-"""
+# Construct a reference to the "stackoverflow" dataset
+dataset_ref = client.dataset("stackoverflow", project="bigquery-public-data")
 
-# 3. Configure Query Safety Limits (Prevent queries > 10GB from running)
-safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=10**10)
+# API request - fetch the dataset
+dataset = client.get_dataset(dataset_ref)
 
-# 4. Submit Query Job to BigQuery Cloud Engine
-query_job = client.query(sql_query, job_config=safe_config)
+# Define Query 
+answers_query = """ 
+                SELECT a.id AS id, a.body AS body, 
+                a.owner_user_id AS owner_user_id
+                FROM `bigquery-public-data.stackoverflow.posts_questions` AS q
+                INNER JOIN `bigquery-public-data.stackoverflow.posts_answers` AS a
+                ON q.id = a.parent_id
+                WHERE q.tags LIKE '%bigquery%'
+                """
 
-# 5. Fetch Results into a Pandas DataFrame
-results_df = query_job.to_dataframe()
+# Configure Query Safety Limits (Prevent queries > 10GB from running)
+safe_config = bigquery.QueryJobConfig(maximum_bytes_billed=27*10**10)
+
+# Submit Query Job to BigQuery Cloud Engine
+answers_query_job = client.query(answers_query, job_config=safe_config)
+
+# Fetch Results into a Pandas DataFrame
+answers_results = answers_query_job.to_dataframe()
 
 # Preview Top 5 Rows
-print(results_df.head())
+print(answers_results.head())
 */
 
 
