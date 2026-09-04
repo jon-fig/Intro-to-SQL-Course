@@ -3,23 +3,23 @@
 # Resumo
 Estudei SQL pela primeira vez há alguns anos, aprendendo os princípios básicos, mexendo no MySQL e iniciando projetos que nunca chegaram a ser finalizados. Fazer este curso me permitiu reconectar com essa base, aprofundar meu conhecimento técnico e testar minhas habilidades em conjuntos de dados do mundo real — o que me fez apreciar o SQL ainda mais.
 
-Sempre fui alguém que aprende fazendo, em vez de apenas consumir teoria pura. A prática direta no ambiente de notebooks me forçou a realmente entender o funcionamento por trás das consultas — como perceber como as agregações criam colunas calculadas que precisam ser referenciadas explicitamente, ou dominar a lógica exata por trás da diferença entre HAVING e WHERE.
+Sempre fui alguém que aprende fazendo, em vez de apenas consumir teoria pura. A prática direta no notebook editor me forçou a realmente entender o funcionamento por trás das queries — como perceber como as agregações criam colunas calculadas que precisam ser referenciadas explicitamente, ou dominar a lógica exata por trás da diferença entre HAVING e WHERE.
 
-Este curso da Kaggle me deu uma compreensão muito mais sólida sobre a lógica de consultas relacionais e os fundamentos do trabalho com data warehouses no Google BigQuery. Link para o Curso da Kaggle
+Este curso da Kaggle me deu uma compreensão muito mais sólida sobre a lógica de queries relacionais e os fundamentos do trabalho com data warehouses no Google BigQuery. [Link para o Curso da Kaggle](https://www.kaggle.com/learn/intro-to-sql/course)
 
-# Principais Aprendizados & Lógica de Consultas
-Como eu já possuía um conhecimento base de ferramentas de planilhas como o Excel e conceitos fundamentais de banco de dados (SELECT, FROM), este curso focou fortemente em elevar meu nível em sintaxe SQL, arquitetura de dados em nuvem e otimização de queries.
+# Principais Aprendizados & Lógica de Queries
+Como eu já possuía um conhecimento base de ferramentas de planilhas como o Excel e conceitos fundamentais de banco de dados (SELECT, FROM), este curso focou fortemente em elevar meu nível em sintaxes SQL, arquitetura de dados em nuvem e otimização de queries.
 
-Abaixo estão os principais conceitos técnicos e momentos de clareza que dominei através da prática no editor de notebooks do Kaggle:
+Abaixo estão os principais conceitos técnicos e momentos de clareza que dominei através da prática no notebook editor do Kaggle.
 
 # SDK do BigQuery em Python & Arquitetura de Dados:
 Compreendi como o Google BigQuery estrutura dados hierarquicamente (Projetos > Datasets > Tabelas).
 
-Dominei o fluxo de trabalho da API do Python: inicialização do objeto bigquery.Client(), construção de referências de datasets/tabelas e uso de chamadas de API para inspecionar esquemas antes de executar consultas custosas.
+Dominei o workflow da API de Python: inicialização bigquery.Client() object, construção de referências de datasets/tabelas e uso de chamadas de API para inspecionar schemas antes de executar queries complexas.
 
-Aprendi a visualizar prévias de linhas usando .to_dataframe() e a configurar limites de tamanho de consulta e configurações de jobs (job_config) para evitar custos acidentais por excesso de cota de dados.
+Aprendi a visualizar prévias de linhas usando .to_dataframe() e a configurar limites de tamanho de queries e configurações de jobs (job_config) para evitar custos acidentais por excesso de cota de dados.
 
-# Mecânica de Consultas & Agregações:
+# Mecânica de Queries & Agregações:
 Reassimilei a praticidade de usar COUNT(*) para contar o total de linhas em vez de procurar nomes de colunas específicos para referenciar.
 
 Entendi como strings SQL multilinha são estruturadas no Python utilizando aspas triplas (""").
