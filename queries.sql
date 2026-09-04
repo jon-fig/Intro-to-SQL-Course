@@ -16,12 +16,6 @@ from google.cloud import bigquery
 # Initialize BigQuery Client
 client = bigquery.Client()
 
-# Construct a reference to the "stackoverflow" dataset
-dataset_ref = client.dataset("stackoverflow", project="bigquery-public-data")
-
-# API request - fetch the dataset
-dataset = client.get_dataset(dataset_ref)
-
 # Define Query 
 answers_query = """ 
                 SELECT a.id AS id, a.body AS body, 
